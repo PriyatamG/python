@@ -2,24 +2,25 @@ import random
 from builtins import print
 from typing import List
 
+def enterNames():
+    students = []
+    while True:
+        name = input("Enter the name")
+        students.append(name)
+        q1 = input("Do you want to add or continue? [y/n]")
+        if q1 == "n" or q1 == "N" or q1 == "No":
+            return students
+            break
+        else:
+            continue
+
+
+def rollNo():
+    n = int(input("Enter the class strength"))
+    students = [[i] for i in range(1, n + 1)]
+    return students
+
 while True:
-    def enterNames():
-        students = []
-        while True:
-            name = input("Enter the name")
-            students.append(name)
-            q1 = input("Do you want to add or continue? [y/n]")
-            if q1 == "n" or q1 == "N" or q1 == "No":
-                return students
-                break
-            else:
-                continue
-
-    def rollNo():
-        n = int(input("Enter the class strength"))
-        students = [[i] for i in range(1, n + 1)]
-        return students
-
 
     while True:
         q2 = input("Do you want to add names or roll numbers ? [N/R]")
