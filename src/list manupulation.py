@@ -1,8 +1,6 @@
 l = eval(input("Enter the list"))
 x = len(l)
-f =[]
+f = []
 for i in range(x):
-    e = l[i]
-    for j in e:
-        f.append(j.upper())
+    f.append(l[i].upper())
 print(f)

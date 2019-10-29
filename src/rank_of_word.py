@@ -3,7 +3,18 @@ Program that takes a string and checks the rank of the word among the different
 permutations of the string arranged alphabetically as in a dictionary.
 """
 
-import tools  # Additional program containing factorial() and noOccurances()
+
+def factorial(a):
+    f = 1
+    for i in range(1, a + 1):
+        f *= i
+    return f
+
+
+def noOccurances(b, a):
+    pos = a.count(b)
+    return pos
+
 
 word = input("Enter the word")  # input the word
 # Lists
@@ -32,10 +43,11 @@ for letter in word:
     q = 1
     if a != 0:
         for x in Set:  # Loop for duplicates
-            pos = tools.noOccurances(x, letters)
-            q *= tools.factorial(pos)
-        b = tools.factorial(wlen)
+            pos = noOccurances(x, letters)
+            q *= factorial(pos)
+        b = factorial(wlen)
         rank += (b * a) / q
     letters.remove(letter)
+
 # print(b, a, q, rank, sep="\t") - for debugging
 print("rank:", rank)
