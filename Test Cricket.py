@@ -59,6 +59,6 @@ while True:
         else:
             result = "Draw"
         break
-print("Final scores:","Player","Computer",sep="\t")
-print("",plrScr,compScr,sep="\t")
+print("Final scores:\n","Player","Computer",sep="\t")
+print("",plrScr,compScr,sep="\t\t")
 print("Result:", result)
