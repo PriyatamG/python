@@ -6,7 +6,7 @@ comp = random.randint(0, 10)
 player = int(input("your chance"))
 print(player, comp, player + comp)
 if OddOrEven == "Odd":
-    if player + comp % 2 == 0:
+    if (player + comp) % 2 == 0:
         t = False
         print("You are bowling")
         k = "Computer"
@@ -17,7 +17,7 @@ if OddOrEven == "Odd":
         k = "Player"
         m = "Computer"
 if OddOrEven == "Even":
-    if player + comp % 2 == 0:
+    if (player + comp) % 2 == 0:
         t = True
         k = "Player"
         m = "Computer"
@@ -27,10 +27,15 @@ if OddOrEven == "Even":
         print("You are bowling")
         k = "Computer"
         m = "Player"
-
+AI = [0,1,2,3,4,5,6,7,8,9,10]
 while True:
-    comp = random.randint(0, 10)
     player = int(input("your chance"))
+    if k == "Player":
+        AI.append(player)
+        comp = random.choice(AI)
+    else:
+        comp = random.randint(0,10)
+
     if player != comp:
         if t:
             plrScr += player
