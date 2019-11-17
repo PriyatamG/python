@@ -27,14 +27,14 @@ if OddOrEven == "Even":
         print("You are bowling")
         k = "Computer"
         m = "Player"
-AI = [0,1,2,3,4,5,6,7,8,9,10]
+AI = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 while True:
     player = int(input("your chance"))
     if k == "Player":
         AI.append(player)
         comp = random.choice(AI)
     else:
-        comp = random.randint(0,10)
+        comp = random.randint(0, 10)
 
     if player != comp:
         if t:
@@ -51,7 +51,7 @@ while True:
     if plrScr == 0 or compScr == 0:
         if player == comp:
             n = m
-            print(k,"Out",l,"needs",m,"runs to win")
+            print(k, "Out", l, "needs", m, "runs to win")
             if t:
                 t = False
             elif not t:
@@ -65,6 +65,6 @@ while True:
         else:
             result = "Draw"
         break
-print("Final scores:\n","Player","Computer",sep="\t")
-print("",plrScr,compScr,sep="\t\t")
+print("Final scores:\n", "Player", "Computer", sep="\t")
+print("", plrScr, compScr, sep="\t\t")
 print("Result:", result)
