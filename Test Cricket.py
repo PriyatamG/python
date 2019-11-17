@@ -50,13 +50,14 @@ while True:
     print(player, comp, plrScr, compScr, sep="\t")
     if plrScr == 0 or compScr == 0:
         if player == comp:
+            n = m
             print(k,"Out",l,"needs",m,"runs to win")
             if t:
                 t = False
             elif not t:
                 t = True
 
-    elif player == comp:
+    elif player == comp or m > n:
         if plrScr > compScr:
             result = "Player wins"
         elif compScr > plrScr:
