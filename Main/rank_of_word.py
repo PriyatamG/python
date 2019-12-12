@@ -18,16 +18,10 @@ def noOccurances(b, a):
 
 word = input("Enter the word")  # input the word
 # Lists
-letters = []  # List of the letters of word
-Set = []  # Set of the letters
-
-# Splitting letters
-for i in word:
-    letters.append(i)
-
-# Sorting lists
-letters.sort()
-Set = set(letters)
+word = word.lower()
+letters = list(word)  # List of the letters of word
+letters.sort()  # Sorting lists
+Set = set(letters)  # Set of letters
 
 # Variables
 wlen = (len(word))
@@ -49,5 +43,5 @@ for letter in word:
         rank += (b * a) / q
     letters.remove(letter)
 
-# print(b, a, q, rank, sep="\t") - for debugging
+    # print(b, a, q, rank, sep="\t") # for debugging
 print("rank:", rank)
