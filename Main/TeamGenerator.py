@@ -1,6 +1,5 @@
 import random
-from builtins import print
-from typing import List
+
 
 def enterNames():
     students = []
@@ -8,7 +7,7 @@ def enterNames():
         name = input("Enter the name")
         students.append(name)
         q1 = input("Do you want to add or continue? [y/n]")
-        if q1 == "n" or q1 == "N" or q1 == "No":
+        if q1.lower() in "no":
             return students
             break
         else:
@@ -19,6 +18,7 @@ def rollNo():
     n = int(input("Enter the class strength"))
     students = [[i] for i in range(1, n + 1)]
     return students
+
 
 while True:
 

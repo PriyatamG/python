@@ -4,6 +4,6 @@ characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', 'a', 'b', 'c', 'd', '
               'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'Q', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@',
               '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '?']
 password = ''
-for i in range(11):
+for i in range(14):
     password += random.choice(characters)
 print(password)
