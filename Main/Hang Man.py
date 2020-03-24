@@ -1,21 +1,18 @@
 import random
 from random_word import RandomWords
-r = RandomWords()
-word = r.get_random_word(hasDictionaryDef="true")
-print(word)
-wordL = list(word)
+
 def canvas(word):
     wordLc = list(word)
-    canvas = list('_'* len(wordLc))
+    canvas = list('_'* len(word))
     noLetters = len(word)//4
     for i in range(noLetters):
-        char = random.choice(wordLc)
-        x = wordLc.index(char)
-        canvas[x] = char
-        wordLc.remove(char)
+        char = random.choice(word)
+        while wordLc.count(char) != 0:
+            x = wordLc.index(char)
+            canvas[x] = char
+            wordLc[x] = ''
     return canvas
-canvas = canvas(wordL)
-print(*canvas)
+
 
 def guess(wordL,g):
     if g in wordL:
@@ -23,13 +20,29 @@ def guess(wordL,g):
     else:
         return False
 
+
+r = RandomWords()
+word = r.get_random_word()
+wordL = list(word)
+canvas = canvas(wordL)
+print(*canvas)
+
 for i in range(10):
     g = input("What is your guess ?")
     if guess(wordL,g):
-        canvas[wordL.index(g)] = g
+        while wordL.count(g) != 0:
+            x = wordL.index(g)
+            canvas[x] = g
+            wordL[x] = ''
         print(*canvas)
-    elif g == word or canvas == wordL:
+    elif g == word :
         print("CORRECT")
         break
     else:
         print("INCORRECT")
+        print(10-i,'chances left')
+    if canvas == list(word):
+        print("Correct")
+        break
+else:
+    print(word)
