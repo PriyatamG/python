@@ -35,14 +35,15 @@ for i in range(10):
             canvas[x] = g
             wordL[x] = ''
         print(*canvas)
+        print(9 - i, 'chances left')
     elif g == word :
         print("CORRECT")
         break
     else:
         print("INCORRECT")
-        print(10-i,'chances left')
+        print(9-i,'chances left')
     if canvas == list(word):
         print("Correct")
         break
 else:
-    print(word)
+    print("The word is:-- ",word)
