@@ -20,6 +20,7 @@ def guess(wordL, g):
     else:
         return False
 
+
 with open('/home/ramana/PycharmProjects/python/Main/wordList.txt') as f:
     r = f.read().splitlines()
 try:
@@ -27,7 +28,7 @@ try:
     word = r.__getitem__(randNum)
 except:
     print("Word not found")
-    word = 'supercalifragilisticexpialidocios'
+    word = 'error'
 wordL = list(word)
 canvas = canvas(wordL)
 print(*canvas)
