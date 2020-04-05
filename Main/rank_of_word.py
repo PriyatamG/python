@@ -26,7 +26,7 @@ while True:
     # Variables
     wlen = (len(word))
     a = b = c = rank = pos = 0
-
+    count = 0
     # Main loop
     for letter in word:
         a = letters.index(letter)
@@ -39,9 +39,11 @@ while True:
             for x in Set:  # Loop for duplicates
                 pos = noOccurances(x, letters)
                 q *= factorial(pos)
+                count += 1
             b = factorial(wlen)
             rank += (b * a) / q
         letters.remove(letter)
 
-        # print(b, a, q, rank, sep="\t") # for debugging
+        print(b, a, q, rank, sep="\t") # for debugging
     print("rank:", rank)
+    print(count)

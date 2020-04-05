@@ -1,7 +1,7 @@
 import socket
 
 Server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-Server.bind(('192.168.0.7', 6969))
+Server.bind(('117.98.141.209', 6969))
 Server.listen(10)
 msg, addr = Server.accept()
 print("Connection established to", addr)
