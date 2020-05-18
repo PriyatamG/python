@@ -2,14 +2,7 @@
 Program that takes a string and checks the rank of the word among the different
 permutations of the string arranged alphabetically as in a dictionary.
 """
-
-
-def factorial(a):
-    f = 1
-    for i in range(1, a + 1):
-        f *= i
-    return f
-
+import math
 
 def noOccurances(b, a):
     pos = a.count(b)
@@ -38,12 +31,12 @@ while True:
         if a != 0:
             for x in Set:  # Loop for duplicates
                 pos = noOccurances(x, letters)
-                q *= factorial(pos)
+                q *= math.factorial(pos)
                 count += 1
-            b = factorial(wlen)
+            b = math.factorial(wlen)
             rank += (b * a) / q
         letters.remove(letter)
 
-        print(b, a, q, rank, sep="\t") # for debugging
+       # print(b, a, q, rank, sep="\t") # for debugging
     print("rank:", rank)
     print(count)

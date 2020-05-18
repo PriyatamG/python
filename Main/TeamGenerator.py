@@ -48,12 +48,14 @@ while True:
     # Loop
     while x > 0:
         if x % z == 0:
-            print("Team", tNum + 1)
+            print()
+            print("Team", tNum + 1,end=': ')
             tNum += 1
         choice = random.choice(students)
         students.remove(choice)
         x = len(students)
-        print(choice)
+        print(*choice,end = ',')
+    print()
 
     q3 = input("Do you want to close or continue ? [y/n]")
 
