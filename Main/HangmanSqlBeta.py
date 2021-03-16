@@ -1,7 +1,7 @@
 import mysql.connector as sql
 import random
 
-database = sql.connect(host = "localhost", user = "root", passwd = "MR203@$a", database = "world")
+database = sql.connect(host = "localhost", user = "root", passwd = "", database = "world")
 if database.is_connected():
 	print("Succesfully connected")
 
